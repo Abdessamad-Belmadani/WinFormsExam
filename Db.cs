@@ -17,7 +17,7 @@ namespace WinFormsApp1
         {
             string conString = "Data Source=DESKTOP-IV0DDR2;Initial Catalog=Examen;Integrated Security=True";
             con.ConnectionString = conString;
-            con.Open();
+            
             
             
 
