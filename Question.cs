@@ -4,19 +4,12 @@ namespace WinFormsApp1
     public abstract class Question
     {
 
-        private int id;
-        private int IdExamen;
-        private string EnnonceQuestion;
+        protected int id;
+        protected int IdExamen;
+        protected string EnnonceQuestion="";
         
 
-        public Question(int id, int IdExamen, string EnnonceQuestion)
-        {
-            this.id = id;
-            this.IdExamen = IdExamen;
-            this.EnnonceQuestion = EnnonceQuestion;
-           
-
-        }
+       
         public int GetId()
         {
             return this.id;

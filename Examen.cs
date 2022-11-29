@@ -17,7 +17,7 @@ public class Examen
             this.DateDebut = DateDebut;
             this.Duree = Duree;
 
-            db.AddExam(IdExamen,Duree,DateDebut);
+            db.AddExam(Duree,DateDebut);
         }
         public int GetDuree()
         {

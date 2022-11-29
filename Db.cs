@@ -24,19 +24,25 @@ namespace WinFormsApp1
         }
        
 
-        public  DataTable GetTable(string sql)
+        public  DataTable GetTable(string TableName)
         {
             DataTable dt = new DataTable();
             cmd.Connection = con;
-            cmd.CommandText = sql;
+            cmd.CommandText = "select * from "+TableName;
             adapter.Fill(dt);
             return dt;
         }
-        public  void AddExam(int id, int duree, string datedebut)
+        public  void AddExam(int duree, string datedebut)
         {
             cmd.Connection = con;
-            cmd.CommandText = "insert into examen values(" + id + "," + duree + ",'" + datedebut + "');";
+            cmd.Parameters.Clear(); 
+            cmd.CommandText =  "insert into examen(duree,datedebut) values(@duree,@datedebut)";
             con.Open();
+           // cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@duree", duree);
+            cmd.Parameters.AddWithValue("@datedebut", datedebut);
+            
+            Console.WriteLine(con.State);
             cmd.ExecuteNonQuery();
             con.Close();
         }

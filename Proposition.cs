@@ -2,18 +2,18 @@
 
 namespace WinFormsApp1
 {
-public class Propostion
+public class Proposition
 {
 	int id,idQuestion;
-	string propostion;
+	string proposition;
 	Db db = new Db();
-	public Proposition(int id,int idQuestion,string propsition)
+	public Proposition(int id,int idQuestion,string proposition)
 	{
 		this.id = id;
 		this.idQuestion = idQuestion;
-		this.propostion = propostion;
+		this.proposition = proposition;
 
-		db.AddProposition(id,propostion,idQuestion);
+		db.AddProposition(id,proposition,idQuestion);
 	}
 }
 }
