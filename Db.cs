@@ -57,7 +57,7 @@ namespace WinFormsApp1
         public  void AddOpenQuestion(int idQ, string ennonce, int idExam)
         {
             cmd.Connection = con;
-            cmd.CommandText = "insert into question_ouverte values(" + idQ + ",'" + ennonce + "'," + idExam  + ");";
+            cmd.CommandText = " insert into question_ouverte values('" + ennonce + "'," + idExam  + ");";
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
